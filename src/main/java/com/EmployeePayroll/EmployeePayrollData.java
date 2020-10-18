@@ -12,4 +12,13 @@ public class EmployeePayrollData {
 		this.name = name;
 		this.salary = salary;
 	}
+	
+	
+	public EmployeePayrollData() {
+		
+	}
+	
+	public String toString() {
+		return "EmployeeId =" + id + " ,name=" + name + " ,salary=" + salary;
+	}
 }
