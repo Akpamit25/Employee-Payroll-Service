@@ -28,7 +28,7 @@ public class NIOFileAPITest {
 		Path playPath = Paths.get(PLAY_WITH_NIO);//
 		if (Files.exists(playPath))
 			Files.delete(playPath);
-		assertTrue(Files.notExists(playPath));
+		assertTrue(Files.notExists(playPath));//
 
 		// Create Directory
 		Files.createDirectory(playPath);

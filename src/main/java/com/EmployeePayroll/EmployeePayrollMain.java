@@ -23,7 +23,7 @@ public class EmployeePayrollMain {
 		EmployeePayrollMain empMain = new EmployeePayrollMain();
 		Scanner sc = new Scanner(System.in);
 		empMain.readInput(sc);
-		empMain.showOutput(IOService.CONSOLE_IO);
+		empMain.showOutput(IOService.CONSOLE_IO);//
 	}
 
 	private void readInput(Scanner sc) {
