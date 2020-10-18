@@ -4,9 +4,9 @@ public class EmployeePayrollData {
 
 	int id;//
 	String name;
-	float salary;
+	double salary;//
 
-	public EmployeePayrollData(int id, String name, float salary) {
+	public EmployeePayrollData(int id, String name, double salary) {
 		super();
 		this.id = id;
 		this.name = name;

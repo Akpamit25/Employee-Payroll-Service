@@ -9,7 +9,7 @@ public class FileUtils {
 			for(File file: allFiles)
 				deleteFiles(file);
 		}
-		return filesToDelete.delete();		
+		return filesToDelete.delete();		//
 	}
 
 

@@ -7,7 +7,7 @@ public class EmployeePayrollMain {
 		CONSOLE_IO, FILE_IO, DB_IO, REST_IO
 	}
 
-	private List<EmployeePayrollData> empList;
+	private List<EmployeePayrollData> empList;//
 
 	public EmployeePayrollMain(List<EmployeePayrollData> empList) {
 		super();
@@ -23,7 +23,7 @@ public class EmployeePayrollMain {
 		EmployeePayrollMain empMain = new EmployeePayrollMain();
 		Scanner sc = new Scanner(System.in);
 		empMain.readInput(sc);
-		empMain.showOutput();
+		empMain.showOutput(IOService.CONSOLE_IO);
 	}
 
 	private void readInput(Scanner sc) {
@@ -37,15 +37,25 @@ public class EmployeePayrollMain {
 		sc.nextLine();
 		System.out.println("Enter Employee salary");
 		// float salary = sc.nextFloat();
-		empPayroll.salary = sc.nextFloat();
+		empPayroll.salary = sc.nextDouble();
 
 		empList.add(empPayroll);
 	}
-
-	private void showOutput() {
-		System.out.println("\n Writing Employee Payroll Details To The Console : ");
-		System.out.println(empList);
-
+	
+	public void showOutput(IOService inputReader) {
+		if (inputReader.equals(IOService.CONSOLE_IO)) {
+			for (EmployeePayrollData o : empList)
+				System.out.println(o.toString());
+		} else if (inputReader.equals(IOService.FILE_IO)) {
+			new EmployeePayrollFileIOService().writeData(empList);
+		}
 	}
+
+	public long countEntries(IOService inputReader) {
+		if (inputReader.equals(IOService.FILE_IO))
+			return new EmployeePayrollFileIOService().countEntries();
+		return 0;
+	}
+
 
 }
