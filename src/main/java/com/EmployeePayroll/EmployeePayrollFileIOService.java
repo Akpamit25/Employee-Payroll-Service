@@ -1,8 +1,10 @@
 package com.EmployeePayroll;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+
 public class EmployeePayrollFileIOService {
 
 	public static final String PAYROLL_FILE_NAME = "Employee-payroll-file.txt";//
@@ -31,5 +33,10 @@ public class EmployeePayrollFileIOService {
 		return countOfEntries;
 	}
 
-
-}
+	public void printEmployeePayrolls() {
+		try {
+			Files.lines(Paths.get(PAYROLL_FILE_NAME)).forEach(System.out::println);
+		} catch (IOException e) {
+		}
+	}
+}/* ... */

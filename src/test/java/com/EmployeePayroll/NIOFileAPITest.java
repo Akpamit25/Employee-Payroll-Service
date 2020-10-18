@@ -3,7 +3,7 @@ package com.EmployeePayroll;
 import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
-import java.nio.file.Files;//
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.IntStream;
@@ -17,7 +17,8 @@ import com.EmployeePayroll.JavaWatchService;
 public class NIOFileAPITest {
 	static final String HOME = System.getProperty("user.home");
 	public static String PLAY_WITH_NIO = "TempPlayGround";
-    @Ignore
+
+	@Ignore
 	@Test
 	public void givenPathWhenCheckedThenConfirm() throws IOException {
 		// Check File Exists
@@ -25,10 +26,10 @@ public class NIOFileAPITest {
 		assertTrue(Files.exists(homePath));
 
 		// Delete File and Check File Not Exist
-		Path playPath = Paths.get(PLAY_WITH_NIO);//
+		Path playPath = Paths.get(PLAY_WITH_NIO);
 		if (Files.exists(playPath))
 			Files.delete(playPath);
-		assertTrue(Files.notExists(playPath));//
+		assertTrue(Files.notExists(playPath));
 
 		// Create Directory
 		Files.createDirectory(playPath);
@@ -60,4 +61,4 @@ public class NIOFileAPITest {
 		new JavaWatchService(dir).processEvents();
 	}
 
-}
+}/* ... */
