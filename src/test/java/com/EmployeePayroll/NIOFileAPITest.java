@@ -15,8 +15,8 @@ import com.EmployeePayroll.JavaWatchService;
 
 @SuppressWarnings("unused")
 public class NIOFileAPITest {
-	private static final String HOME = System.getProperty("user.home");
-	private static String PLAY_WITH_NIO = "TempPlayGround";
+	static final String HOME = System.getProperty("user.home");
+	public static String PLAY_WITH_NIO = "TempPlayGround";
     @Ignore
 	@Test
 	public void givenPathWhenCheckedThenConfirm() throws IOException {
@@ -25,7 +25,7 @@ public class NIOFileAPITest {
 		assertTrue(Files.exists(homePath));
 
 		// Delete File and Check File Not Exist
-		Path playPath = Paths.get(PLAY_WITH_NIO);
+		Path playPath = Paths.get(PLAY_WITH_NIO);//
 		if (Files.exists(playPath))
 			Files.delete(playPath);
 		assertTrue(Files.notExists(playPath));
