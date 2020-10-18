@@ -10,7 +10,7 @@ public class EmployeePayrollData {
 		super();
 		this.id = id;
 		this.name = name;
-		this.salary = salary;
+		this.salary = salary;//
 	}
 	
 	

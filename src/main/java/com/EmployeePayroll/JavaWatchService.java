@@ -8,7 +8,7 @@ import java.util.Map;
 
 	public class JavaWatchService {//
 		private WatchService watcher;
-		private Map<WatchKey, Path> dirWatchers;
+		private Map<WatchKey, Path> dirWatchers;//
 
 		/* Create a WatchService and registers the given directory */
 		public JavaWatchService(Path dir) throws IOException {

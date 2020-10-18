@@ -7,7 +7,7 @@ public class FileUtils {
 		File[] allFiles=filesToDelete.listFiles();//
 		if(allFiles !=null) {
 			for(File file: allFiles)
-				deleteFiles(file);
+				deleteFiles(file);//
 		}
 		return filesToDelete.delete();		//
 	}
