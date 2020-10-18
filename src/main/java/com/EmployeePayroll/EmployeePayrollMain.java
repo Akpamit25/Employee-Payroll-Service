@@ -3,11 +3,11 @@ package com.EmployeePayroll;
 import java.util.*;
 
 public class EmployeePayrollMain {
-	public enum IOService {//
+	public enum IOService {
 		CONSOLE_IO, FILE_IO, DB_IO, REST_IO
 	}
 
-	private List<EmployeePayrollData> empList;//
+	private List<EmployeePayrollData> empList;
 
 	public EmployeePayrollMain(List<EmployeePayrollData> empList) {
 		super();
@@ -23,7 +23,7 @@ public class EmployeePayrollMain {
 		EmployeePayrollMain empMain = new EmployeePayrollMain();
 		Scanner sc = new Scanner(System.in);
 		empMain.readInput(sc);
-		empMain.showOutput(IOService.CONSOLE_IO);//
+		empMain.showOutput(IOService.CONSOLE_IO);
 	}
 
 	private void readInput(Scanner sc) {
@@ -41,7 +41,7 @@ public class EmployeePayrollMain {
 
 		empList.add(empPayroll);
 	}
-	
+
 	public void showOutput(IOService inputReader) {
 		if (inputReader.equals(IOService.CONSOLE_IO)) {
 			for (EmployeePayrollData o : empList)
@@ -57,5 +57,9 @@ public class EmployeePayrollMain {
 		return 0;
 	}
 
+	public void printEmployeePayrollData() {
+		new EmployeePayrollFileIOService().printEmployeePayrolls();
+	}
 
 }
+/* ... */
