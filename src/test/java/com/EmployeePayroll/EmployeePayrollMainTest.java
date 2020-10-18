@@ -17,5 +17,16 @@ public class EmployeePayrollMainTest {
 		payrollServiceObject.printEmployeePayrollData();
 		Assert.assertEquals(3, payrollServiceObject.countEntries(IOService.FILE_IO));
 	}
+	
+	@Test
+	public void given3EmployeesWhenReadFromFileShouldMatchNumberOfEmployeeEntries() {
 
-}/* ... */
+		EmployeePayrollMain payrollServiceObject = new EmployeePayrollMain();
+		payrollServiceObject.readInput(IOService.FILE_IO);
+		int countOfEntriesRead = payrollServiceObject.sizeOfEmployeeList();
+		Assert.assertEquals(3, countOfEntriesRead);
+	}
+}
+
+/* ... */
+/* ... */
